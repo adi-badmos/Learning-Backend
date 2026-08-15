@@ -1,9 +1,10 @@
 {
   "name": "learning-backend",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
     "url": "https://github.com/adi-badmos/Learning-Backend.githttps:/issues"
   },
   "homepage": "https://github.com/adi-badmos/Learning-Backend.githttps:#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
 }
