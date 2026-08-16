@@ -1,11 +1,22 @@
 import dotenv from 'dotenv';
 import connectDB from "./db/index.js"
 import express from 'express';
-const app = express();
 
 dotenv.config({
-    path: './env'
+    path: './.env'
 });
 
+const app = express();
+
+const port = process.env.PORT || 8000;
+
 // database se jb bhi baat kro => try-catch lgao and async-await ka dhyan rkho
-connectDB();
+connectDB()
+    .then(() => {
+        app.listen(port, () => {
+            console.log(`Server is running at port: ${port}`);
+        });
+    })
+    .catch((error) => {
+        console.log('Failed to start server!', error);
+    });
